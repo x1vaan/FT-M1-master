@@ -12,12 +12,12 @@ function BinarioADecimal(num) {
 
 function DecimalABinario(num) {
   // tu codigo aca
-   var nuevoarray = [];
-  while(Math.floor(num / 2 != 0)){
-      nuevoarray.unshift(Math.floor(num % 2));
+  var nuevoarray = [];
+  while(num > 0){
+        nuevoarray.unshift(num % 2)
+        num = Math.floor(num/2);
   }
-  nuevoarray.join('');
-  return nuevoarray;
+  return nuevoarray.join('');
 }
 
 
