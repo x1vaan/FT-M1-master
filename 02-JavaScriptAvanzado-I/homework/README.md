@@ -156,6 +156,8 @@ var test = obj.prop.getFullname; // no se coloco el parentesis entonces lo que s
 
 console.log(test()); // // Juan Perez por que getFullname: function() {
         //                                            return this.fullname; } hace referencia al objeto global 
+
+        
       
 
 ### Event loop
