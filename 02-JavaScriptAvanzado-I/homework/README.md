@@ -31,7 +31,7 @@ console.log(x); // 1
 
 ```javascript
 console.log(bar); // undefined
-console.log(baz); // Error , esto no fue hoisteado entonces tira error
+console.log(baz); // Error , esto no fue hoisteado, no esta definido
 foo(); // 'Hola!'
 function foo() { console.log('Hola!'); }
 var bar = 1;
