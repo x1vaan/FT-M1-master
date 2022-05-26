@@ -1,5 +1,7 @@
 'use strict'
 
+const { queue } = require("@11ty/eleventy-cache-assets");
+
 /*
 Definir las funciones recursivas nFactorial y nFibonacci.
 
@@ -15,9 +17,20 @@ Como ejercicio adicional y completamente opcional, al terminar de resolver este 
 */
 
 function nFactorial(n) {
+  if(n===0 || n=== 1) return 1;
+
+  if(n < 0) return 'Error, no existen factoriales de numeros negativos';
+
+  return n * nFactorial(n - 1);
 }
 
 function nFibonacci(n) {
+   
+  if(n === 0 ) return 0;
+
+  if(n===1) return 1;
+
+    return nFibonacci(n-1) + nFibonacci(n-2);
 }
 
 /*
@@ -30,8 +43,19 @@ Pueden utilizar class o función constructora.
 */
 
 function Queue() {
-
+      this.cola = [];
 }
+  Queue.prototype.enqueue = function (value){
+      return this.cola.push(value);
+  } 
+  Queue.prototype.dequeue = function (){
+return this.cola.shift()
+  }
+  Queue.prototype.size = function (){
+   return this.cola.length ;
+  }
+
+
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
