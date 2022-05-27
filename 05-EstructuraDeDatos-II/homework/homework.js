@@ -27,6 +27,7 @@ LinkedList.prototype.add = function(value) {
    current.next = nodo ;
    return;
 }
+
 LinkedList.prototype.remove = function(){
    var current = this.head;
      if(!current) {
