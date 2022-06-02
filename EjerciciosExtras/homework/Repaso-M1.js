@@ -16,8 +16,33 @@ const {
 
 var countArray = function(array) {
     // Tu código aca:
-    
+    array = array.join();
+    array = Array.from(array)
+      array = array.filter(function(elemento){
+        return elemento !== ',';
+      });
+    var nuevoarray=[];
+      for(var i=0	;i<array.length	;i++){
+         nuevoarray.push(parseInt(array[i]))
+      }
+      console.log(nuevoarray)
+    var suma = nuevoarray.reduce(function(ac,elemento){
+      return ac + elemento;
+    });
+    return suma;
 }
+// var countArray = function(array) {
+//   // Tu código aca:
+//   let suma = 0 ;
+//  for(var i=0  ;i<array.length ;i++){
+//  if(Array.isArray(array[i])){
+//  suma = suma + countArray(array[i])
+//}
+//else {
+//  suma + suma + array[i]
+//     }
+//   }
+// }
 
 
 // Implementar la función countProps: a partir de un objeto en el cual cada propiedad puede contener
@@ -39,7 +64,14 @@ var countArray = function(array) {
 
 var countProps = function(obj) {
     // Tu código aca:
-
+ var suma = 0;
+    for(var prop in obj){
+      suma++
+      if(typeof obj[prop] === 'object' && !Array.isArray(obj[prop])){
+      suma = suma +  countProps(obj[prop]);
+      }
+    }
+    return suma;
 }
 
 
@@ -53,7 +85,16 @@ var countProps = function(obj) {
 
 LinkedList.prototype.changeNotNumbers = function(){
     // Tu código aca:
-
+    var cambios = 0;
+   var current = this.head
+   while(current){
+      if(!Number(current.value) && current.value !== 0 && current.value !== false){
+          current.value = 'Kiricocho'
+          cambios++
+      }
+      current = current.next
+   }
+  return cambios;
 }
 
 

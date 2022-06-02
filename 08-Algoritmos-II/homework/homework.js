@@ -6,7 +6,16 @@ function quickSort(array) {
   // el array recibido como parámetro
   // Devolver el array ordenado resultante
   // Tu código:
-
+  let arraymenor = [];
+  let arraymayor = [];
+  for(var i=0 ;i<array.length ;i++){
+    if(array[i] < array[0]){
+       arraymenor.push(array[i]);
+    }
+    else {
+      arraymayor.push(array[i])
+    }
+  }
 }
 
 function mergeSort(array) {

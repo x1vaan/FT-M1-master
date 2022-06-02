@@ -96,13 +96,12 @@ BinarySearchTree.prototype.depthFirstForEach = function(cb, traversal){
 
 BinarySearchTree.prototype.breadthFirstForEach = function(cb, array = []){
   cb(this.value);
-  array.push(this.value);
-   if(this.left && this.right){
-     return this.left.breadthFirstForEach(cb,array) && this.right.breadthFirstForEach(cb, array);
-   }
-   if(this.left) return this.left.breadthFirstForEach(cb,array);
-   if(this.right) return this.right.breadthFirstForEach(cb,array);
-   return;
+    if(!this.left && !this.right){
+      array.push(this.left) ;
+      array.push(this.right);
+      return this.left.breadthFirstForEach(cb,array) && this.right.breadthFirstForEach(cb)
+    }
+    
 }
 
 // No modifiquen nada debajo de esta linea
